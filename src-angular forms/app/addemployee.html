@@ -1,0 +1,31 @@
+<h1>Add Employee..</h1>
+<form #empForm=ngForm (ngSubmit)="addData()">
+<table>
+     <tr>
+         <td>Enter Id</td>
+         <td><input type="text" id="eid" name="id" [(ngModel)]="empId" #idcontrol="ngModel" required/></td>
+         <span *ngIf="idcontrol.touched && idcontrol.invalid">ID should be filled</span>
+     </tr>
+    
+    <tr>
+            <td>Enter Name</td>
+            <td><input type="text" id="ename" name="name" [(ngModel)]="empName" #namecontrol="ngModel" required/></td>
+            <span *ngIf="namecontrol.touched && namecontrol.invalid">Name should be filled</span>
+     </tr>
+
+    <tr>
+            <td>Enter Salary</td>
+            <td><input type="text" id= "esalary" name="salary" [(ngModel)]="empSalary" #salarycontrol="ngModel" required/></td>
+            <span *ngIf="salarycontrol.touched && salarycontrol.invalid">Salary should be filled</span>
+        </tr>
+    <tr>
+            <td>Enter Department</td>
+            <td><input type="text" id="edepartment" name="department" [(ngModel)]="empDepartment" #depcontrol="ngModel" required/></td>
+            <span *ngIf="depcontrol.touched && depcontrol.invalid">Department should be filled</span>
+        </tr>
+    <tr>
+        <td><input type="submit" value="Add Employee"  [disabled]="empForm.invalid"/></td>
+    </tr>
+    
+</table>
+</form>
